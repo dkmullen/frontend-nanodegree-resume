@@ -16,7 +16,7 @@ var bio = {
     "skills" : [
 			"HTML/CSS", "JavaScript & JQuery", "MS Office", "Teaching", "Adminisration"
 		],
-		"bioPic" : "images/fry.jpg"
+		"bioPic" : "images/gg.jpg"
 }
 
 var work = {
@@ -29,11 +29,11 @@ var work = {
         "description" : "Direct and administer pastoral care for 350 people; Deliver well-organized, informative and entertaining presentations using multimedia; Manage four full-time and 6-10 part-time employees; Cast vision and lead staff in setting and meeting objectives that lead the church toward its mission; Led a $2.3 million building project (2004-06); Developed and led four successful capital campaigns; Oversee day-to-day financial transactions, ensuring adherence to sound financial reporting procedures; Provide leadership training for staff and volunteers; Built and currently maintain a mobile-responsive web site (morrisonhill.com)"
     },
     {
-        "employer" : "Rothgeb's Restaurants",
-        "title" : "Assistant Manager",
-        "location" : "Knoxville, TN USA",
-        "dates" : "1986-87",
-        "description" : "Scheduling employees, serving customers"
+        "employer" : "Southeast Christian Church",
+        "title" : "Summer Intern",
+        "location" : "Denver, CO USA",
+        "dates" : "1987",
+        "description" : "Serve in a pastoral care role under the direction of the Senior Minister"
     }
     ]
 }
@@ -45,9 +45,9 @@ var projects = {
         "dates" : "2014-15",
         "description" : "Hmmm",
         "images" : [
-            "http://dkmullen.com/pix/gg.jpg",
-            "http://dkmullen.com/pix/gg.jpg",
-            "http://dkmullen.com/pix/gg.jpg"
+            "images/197x148.gif",
+            "images/197x148.gif",
+						"images/197x148.gif"
         ]
     },
     {
@@ -55,9 +55,9 @@ var projects = {
         "dates" : "2012-14",
         "description" : "Not too bad",
         "images" : [
-            "http://dkmullen.com/pix/gg.jpg",
-            "http://dkmullen.com/pix/gg.jpg",
-            "http://dkmullen.com/pix/gg.jpg"
+            "images/197x148.gif",
+            "images/197x148.gif",
+						"images/197x148.gif"
         ]
     }
     ]
@@ -68,17 +68,17 @@ var education = {
     {
         "name": "Johnson University",
         "location": "Knoxville, TN  USA",
-        "degree" : "BA",
-        "majors" : ["Biblical Studies"],
-        "dates" : "1983-87",
+        "degree" : "Master of Arts",
+        "majors" : ["New Testament Studies"],
+        "dates" : "1990-93",
         "url" : "http://www.johnsonu.edu/"
     },
     {
         "name": "Johnson University",
         "location": "Knoxville, TN  USA",
-        "degree" : "MA",
-        "majors" : ["New Testament Studies"],
-        "dates" : "1990-93",
+        "degree" : "Bachelor of Arts",
+        "majors" : ["Biblical Studies"],
+        "dates" : "1983-87",
         "url" : "http://www.johnsonu.edu/"
     }
     ],
@@ -93,7 +93,7 @@ var education = {
         "title" : "Intro to Computer Science",
         "school" : "Udacity",
         "dates" : "October-December 2014",
-        "url" : "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
+        "url" : "https://www.udacity.com/course/intro-to-computer-science--cs101"
     }
 
     ]
@@ -210,8 +210,7 @@ education.display = function() {
 		var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourse[course].dates);
 		var formattedOnlineURL = HTMLonlineURL.replace("%data%", education.onlineCourse[course].url);
 		
-		$(".education-entry:last").append(formattedOnlineTitle);
-		$(".education-entry:last").append(formattedOnlineSchool);
+		$(".education-entry:last").append(formattedOnlineTitle + formattedOnlineSchool);
 		$(".education-entry:last").append(formattedOnlineDates);
 		$(".education-entry:last").append(formattedOnlineURL);
 	}
