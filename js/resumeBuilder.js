@@ -26,7 +26,7 @@ var work = {
         "title" : "Senior Minister",
         "location" : "Kingston, TN USA",
         "dates" : "1988 - Present",
-        "description" : "Direct and administer pastoral care for 350 people; Deliver well-organized, informative and entertaining presentations using multimedia; Manage four full-time and 6-10 part-time employees; Cast vision and lead staff in setting and meeting objectives that lead the church toward its mission; Led a $2.3 million building project (2004-06); Developed and led four successful capital campaigns; Oversee day-to-day financial transactions, ensuring adherence to sound financial reporting procedures; Provide leadership training for staff and volunteers; Built and currently maintain a mobile-responsive web site (morrisonhill.com)"
+        "description" : "Direct and administer pastoral care for 350 people; Deliver well-organized, informative and entertaining presentations using multimedia; Manage four full-time and 6-10 part-time employees; Cast vision and lead staff in setting and meeting objectives that lead the church toward its mission."
     },
     {
         "employer" : "Southeast Christian Church",
@@ -41,21 +41,19 @@ var work = {
 var projects = {
     "projects" : [
     {
-        "title" : "Hmmm",
+        "title" : "MHCC Website",
         "dates" : "2014-15",
-        "description" : "Hmmm",
+        "description" : "A responsive site built with a template",
         "images" : [
-            "images/197x148.gif",
-            "images/197x148.gif",
-						"images/197x148.gif"
+            "images/mh.jpg",
+						"images/mh2.jpg"
         ]
     },
     {
-        "title" : "Hmmm2",
+        "title" : "Sample Project",
         "dates" : "2012-14",
-        "description" : "Not too bad",
+        "description" : "Just to show that two projects display as well as one.",
         "images" : [
-            "images/197x148.gif",
             "images/197x148.gif",
 						"images/197x148.gif"
         ]
@@ -150,10 +148,12 @@ work.display = function() {
 		var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
 		var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
 		var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+		var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
 		
 		var formattedEmployerTitle = formattedEmployer + formattedTitle;
 	
 		$(".work-entry:last").append(formattedEmployerTitle);
+		$(".work-entry:last").append(formattedLocation);
 		$(".work-entry:last").append(formattedDates);
 		$(".work-entry:last").append(formattedDescription);
 	}
@@ -206,13 +206,17 @@ education.display = function() {
 	for (course in education.onlineCourse) {
 		$("#education").append(HTMLschoolStart);
 		var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourse[course].title);
+		var formattedOnlineLink = formattedOnlineTitle.replace("#", education.onlineCourse[course].url);
+		//adds the url to the previous
 		var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourse[course].school);
 		var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourse[course].dates);
 		var formattedOnlineURL = HTMLonlineURL.replace("%data%", education.onlineCourse[course].url);
+		var formattedOnlineURLLink = formattedOnlineURL.replace("#", education.onlineCourse[course].url);
+		//adds the url to the previous
 		
-		$(".education-entry:last").append(formattedOnlineTitle + formattedOnlineSchool);
+		$(".education-entry:last").append(formattedOnlineLink + formattedOnlineSchool);
 		$(".education-entry:last").append(formattedOnlineDates);
-		$(".education-entry:last").append(formattedOnlineURL);
+		$(".education-entry:last").append(formattedOnlineURLLink);
 	}
 }
 education.display();

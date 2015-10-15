@@ -18,10 +18,11 @@ h6 {
   overflow: auto;
 }
 
+/* indented these blocks from 5 to 7% */
 .education-entry,
 .work-entry,
 .project-entry {
-  padding: 0 5%;
+  padding: 0 7%;
 }
 
 h1 {
@@ -64,7 +65,7 @@ h5 {
 
 .date-text {
   font-style: italic;
-  font-size: 14px;
+  font-size: 15px;
   color: #999;
   line-height: 16px;
   float: left;
@@ -72,7 +73,7 @@ h5 {
 
 .location-text {
   font-style: italic;
-  font-size: 14px;
+  font-size: 15px;
   color: #999;
   line-height: 16px;
   float: right;
@@ -80,7 +81,7 @@ h5 {
 }
 
 p {
-  font-size: 14px;
+  font-size: 15px;
   color: #333;
   line-height: 21px;
 }
@@ -90,6 +91,9 @@ a {
   text-decoration: none;
   margin-top: 10px;
   display: block;
+}
+.link {
+	display: block;
 }
 
 .welcome-message {
@@ -118,18 +122,15 @@ a {
 }
 
 .gray {
-  background-color: #f3f3f3;
+  background-color: #e1e1e1; /* darker gray */
   padding-bottom: 10px;
   clear:both;
 }
 
-.dark-gray {
-  background-color: #4a4a4a;
-}
-
-/* TODO: Replace with image later */
-#header {
-  background-color: #484848;
+/* changed header and footer bg color */
+#header,
+.dark-blue {
+  background-color: #033649;
 }
 
 .flex-box {
