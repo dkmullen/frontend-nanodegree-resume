@@ -26,14 +26,16 @@ var work = {
         "title" : "Senior Minister",
         "location" : "Kingston, TN USA",
         "dates" : "1988 - Present",
-        "description" : "Direct and administer pastoral care for 350 people; Deliver well-organized, informative and entertaining presentations using multimedia; Manage four full-time and 6-10 part-time employees; Cast vision and lead staff in setting and meeting objectives that lead the church toward its mission."
+        "description" : "Direct and administer pastoral care for 350 people; Deliver well-organized, informative and entertaining presentations using multimedia; Manage four full-time and 6-10 part-time employees; Cast vision and lead staff in setting and meeting objectives that lead the church toward its mission.",
+				"url" : "http://morrisonhill.com"
     },
     {
         "employer" : "Southeast Christian Church",
         "title" : "Summer Intern",
         "location" : "Denver, CO USA",
         "dates" : "1987",
-        "description" : "Serve in a pastoral care role under the direction of the Senior Minister"
+        "description" : "Serve in a pastoral care role under the direction of the Senior Minister",
+				"url" : "http://www.southeastcc.org/"
     }
     ]
 }
@@ -41,22 +43,23 @@ var work = {
 var projects = {
     "projects" : [
     {
+        "title" : "Portfolio of Work",
+        "dates" : "2015",
+        "description" : "Project completed for Udacity Front-end Developer Nanodegree",
+        "images" : [
+            "images/portfolio.jpg"
+        ],
+				"url" : "https://github.com/dkmullen/responsive-portfolio"
+    },
+    {
         "title" : "MHCC Website",
         "dates" : "2014-15",
         "description" : "A responsive site built with a template",
         "images" : [
             "images/mh.jpg",
 						"images/mh2.jpg"
-        ]
-    },
-    {
-        "title" : "Sample Project",
-        "dates" : "2012-14",
-        "description" : "Just to show that two projects display as well as one.",
-        "images" : [
-            "images/197x148.gif",
-						"images/197x148.gif"
-        ]
+        ],
+				"url" : "http://morrisonhill.com"
     }
     ]
 }
@@ -145,14 +148,13 @@ work.display = function() {
 		$("#workExperience").append(HTMLworkStart); // workExp in HTML, HTMLworkStart in helpter.js
 		
 		var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+		var formattedEmployerLink = formattedEmployer.replace("#", work.jobs[job].url);
 		var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
 		var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
 		var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
 		var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
 		
-		var formattedEmployerTitle = formattedEmployer + formattedTitle;
-	
-		$(".work-entry:last").append(formattedEmployerTitle);
+		$(".work-entry:last").append(formattedEmployerLink + formattedTitle);
 		$(".work-entry:last").append(formattedLocation);
 		$(".work-entry:last").append(formattedDates);
 		$(".work-entry:last").append(formattedDescription);
@@ -165,18 +167,19 @@ projects.display = function() {
 		$("#projects").append(HTMLprojectStart);
 		
 		var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
-		$(".project-entry:last").append(formattedTitle);
-		
+		var formattedTitleURL = formattedTitle.replace("#", projects.projects[project].url);
 		var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
-		$(".project-entry:last").append(formattedDates);
-		
 		var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
+		
+		$(".project-entry:last").append(formattedTitleURL);
+		$(".project-entry:last").append(formattedDates);				
 		$(".project-entry:last").append(formattedDescription);
 		
+		//the following adds images to each project, but only if there are images; allows for varying numbers of images too.
 		if (projects.projects[project].images.length > 0) {
-			for (image in projects.projects[project].images) {
-				var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
-		$(".project-entry:last").append(formattedImage);
+				for (image in projects.projects[project].images) {
+					var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
+				$(".project-entry:last").append(formattedImage);
 			}
 		}
 	}
