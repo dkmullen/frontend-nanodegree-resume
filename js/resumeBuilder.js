@@ -4,7 +4,7 @@
 
 var bio = {
     "name" : "Dennis Mullen",
-    "role" : "Senior Minister",
+    "role" : "Aspiring Web Developer",
     "contacts" : {
         "mobile" : "(865) 555-5432",
 				"email" : "dkmullen@gmail.com",
